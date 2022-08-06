@@ -20,26 +20,29 @@ body {
     align-items: center;
 }
 
+
 h1 {
-
+    margin-top: 10px;
+    display: flex;
     color: goldeNrod;
-
+    padding: 5px;
     background-color: rgb(7, 82, 57);
-    padding: 5px 10px;
+    
 }
 
 .caja-juego {
-    padding: 20px;
+    
+    padding:  10px 10px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
    
     min-width: 340px;
-    width: 50%;
+    width: 60%;
     max-width: 500px;
     
     
-    height: 500px;
+    height: 630px;
     background-color: rgba(180, 234, 163, 0.591);
     border-radius: 40px;
     flex-direction: column;
@@ -55,7 +58,7 @@ h1 {
     color: white;
     width: 80%;
     padding: 10px;
-    height: 300px;
+    height: 280px;
     flex-direction: column;
     background-color: rgb(7, 82, 57);
     border-radius: 10px;
@@ -67,21 +70,22 @@ h1 {
 
 .opciones-juego {
     display: flex;
+    flex-direction: row;
     gap: 10px;
+    flex-wrap: wrap;
+    height: auto;
+    width: 320px;
     
-    height: 150px;
-    width: 200px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 
 }
 
-.opcion-uno, .opcion-dos {
+.opcion-uno, .opcion-dos, .opcion-tres, .opcion-cuatro {
 
     background-color: rgb(65, 65, 65);
     height: 50px;
-    width: 200px;
+    width: 150px;
     background-color: rgba(255, 255, 255, 0.413);
     border-radius: 20px;
     border: 2px solid white;
@@ -98,13 +102,19 @@ h1 {
     border: 2px solid black;
 }
 
-.opcion-uno:hover, .opcion-dos:hover {
+.opcion-tres {
+    
+    background-color: rgb(239, 67, 67);
+    border: 2px solid black;
+}
+
+.opcion-uno:hover, .opcion-dos:hover, .opcion-tres:hover {
 
     box-shadow: 0px 0px 5px#061700;
     cursor:pointer;
 }
 
-.opcion-uno:active, .opcion-dos:active {
+.opcion-uno:active, .opcion-dos:active, .opcion-tres:active {
 
     box-shadow: inset 0px 0px 3px#061700;
    
@@ -123,6 +133,98 @@ h1 {
 }
 
 .mensaje {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    color: rgb(0, 0, 0);
+    background-color: rgb(208, 208, 208);
+    height: 50px;
+    width: 100%;
+}
+
+
+
+.juegoPc, .juegoHumano {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 80px;
+    width: 100%;
+}
+
+.juegoHumano {
+
+    background-color:rgb(8, 59, 43);
+
+}
+.juegoPc {
+
+    
+    background-color: rgb(36, 120, 92);
+}
+
+.cajaApuestas {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 20px;
+    font-size: 18px;
+}
+.valoresApuestas {
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.apuesta {
+    font-size: 16px;
+    height: 25px;
+    width: 50px;
+    cursor: pointer;
+    border: 2px solid black;
+    
+}
+
+.apuesta:active {
+    box-shadow: inset 0px 0px 1px#061700;
+}
+
+.opcion-cuatro {
+    display: flex;
+    gap: 4px;
+    border-radius: 0px;
+    font-size: 14px;
+    background-color:rgb(8, 59, 43);
+    color: white;
+}
+
+.totalJuego {
+
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    background-color: rgb(207, 207, 207);
+    padding: 5px;
+}
+
+.reseteo {
+
+    background-color: rgb(239, 67, 67);
+    width: 90px;
+    cursor: pointer;
+    
+
+}
+
+.reseteo:active {
+
+    box-shadow: inset 0px 0px 2px#061700;
 }
