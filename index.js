@@ -118,7 +118,7 @@ let cartasPC = () => {
 };
 
 let apostar = (apuesta) => {
-  if (totalGanado > 0 && !empezoElJuego) {
+  if (totalGanado >= apuesta && !empezoElJuego) {
     totalGanado -= apuesta;
 
     valorApostado += apuesta;
