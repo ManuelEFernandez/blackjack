@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blackjack</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/b7df5782e3.js" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b7df5782e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/x-icon" href="/logoBlackjack.png" />
+  </head>
 
-<body>
-
+  <body>
     <div class="caja-juego">
-        
-            <h1>Blackjack</h1>
-       
-
-
-        <div class="resultados-cartas">
-            <div class="mensaje" id="mensaje">
-                <h3>¡Hacé una apuesta!</h3>
-            </div>
-            <div class="juegoHumano">
-                <i class="fa-solid fa-user"></i>
-                <div class="status-humano">
-                <div class="cartas" id="cartas">
-                    <h4>Cartas:</h4>
-                </div>
-                <div class="suma" id="sumaJuego">
-                    <h4>Suma:</h4>
-                </div>
-                </div>
-            </div>
-            <div class="juegoPc">
-                <i class="fa-solid fa-computer"></i>
-
-                <div class="status-pc">
-                <div class="cartas pc" id="cartasCompu">
-                    <h4>Cartas:</h4>
-                    
-                </div>
-                <div class="suma pc" id="sumaJuegoCompu">
-                    <h4>Suma: </h4>
-                </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="opciones-juego">
-            <button class="opcion-uno" onclick="sacarCarta()">SACAR CARTA</button>
-            <button class="opcion-dos" onclick="empezarJuego()">EMPEZAR JUEGO</button>
-            <button class="opcion-tres" onclick="cartasPC()">DETENERSE</button>
-            <div class="opcion-cuatro" onclick="cartasPC()">APUESTA:
-            <span id="valorApostado">0</span></div>
-          
-        </div>
-        <div class="cajaApuestas">
-
-            <div class="valoresApuestas">
-                
-                <button class="apuesta 10" onclick="apostar(10)">10</button>
-                <button class="apuesta 25"onclick="apostar(25)">25</button>
-                <button class="apuesta 50" onclick="apostar(50)">50</button>
-                <button class="apuesta reseteo" onclick="resetear()">RESETEO</button>
-            </div>
-            <div class="totalJuego">
-                <p>Total:</p>
-                <span id="total">$100</span>
-
-            </div>
-
+      <h1>Blackjack</h1>
+      <div class="resultados-cartas">
+        <div class="mensaje" id="mensaje">
+          <h3>¡Hacé una apuesta!</h3>
         </div>
 
-        <script src="index.js"></script>
-</body>
+        <div class="juegoHumano">
+          <i class="fa-solid fa-user"></i>
+          <div class="status-humano">
+            <div class="cartas" id="cartas">
+              <h4>Cartas:</h4>
+            </div>
+            <div class="suma" id="sumaJuego">
+              <h4>Suma:</h4>
+            </div>
+          </div>
+        </div>
 
+        <div class="juegoPc">
+          <i class="fa-solid fa-computer"></i>
+          <div class="status-pc">
+            <div class="cartas pc" id="cartasCompu">
+              <h4>Cartas:</h4>
+            </div>
+            <div class="suma pc" id="sumaJuegoCompu">
+              <h4>Suma:</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="opciones-juego">
+        <button class="opcion-uno" onclick="sacarCarta()">SACAR CARTA</button>
+        <button class="opcion-dos" onclick="empezarJuego()">
+          EMPEZAR JUEGO
+        </button>
+        <button class="opcion-tres" onclick="cartasPC()">DETENERSE</button>
+        <div class="opcion-cuatro" onclick="cartasPC()">
+          APUESTA:
+          <span id="valorApostado">0</span>
+        </div>
+      </div>
+
+      <div class="cajaApuestas">
+        <div class="valoresApuestas">
+          <button class="apuesta 10" onclick="apostar(10)">10</button>
+          <button class="apuesta 25" onclick="apostar(25)">25</button>
+          <button class="apuesta 50" onclick="apostar(50)">50</button>
+          <button class="apuesta reseteo" onclick="resetear()">RESETEO</button>
+        </div>
+        <div class="totalJuego">
+          <p>Total:</p>
+          <span id="total">$100</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>

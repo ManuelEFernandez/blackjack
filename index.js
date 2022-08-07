@@ -103,8 +103,6 @@ let cartasPC = () => {
       mensajeJuego.textContent = mensaje;
       gano = true;
       calcularResultado(valorApostado);
-      
-      
     }
 
     if (sumaPC >= suma && sumaPC < 22) {
@@ -113,29 +111,21 @@ let cartasPC = () => {
       calcularResultado(valorApostado);
       return (mensajeJuego.textContent = mensaje);
     }
-   
+
     setTimeout(cartasPC, 1000);
     return (posibilidadSacarCarta = false);
   }
 };
 
-
-for (let index = 0; index < 5; index++) {
-    console.log("Hola");
-    
-}
-
 let apostar = (apuesta) => {
-
-   if (totalGanado > 0 && !empezoElJuego) {
+  if (totalGanado > 0 && !empezoElJuego) {
     totalGanado -= apuesta;
 
     valorApostado += apuesta;
     valorApuestaJuego.textContent = valorApostado;
     totalDelJuego.textContent = `$${totalGanado}`;
-}   
-
-}
+  }
+};
 
 let resetear = () => {
   if (!empezoElJuego) {
@@ -143,24 +133,14 @@ let resetear = () => {
     valorApuestaJuego.textContent = valorApostado;
     totalGanado = valorRondaPrevia;
     totalDelJuego.textContent = `$${totalGanado}`;
-
   }
-
-
-}
+};
 
 let calcularResultado = (apuesta) => {
-
   if (gano) {
-
-    totalGanado = totalGanado + (apuesta*2);
+    totalGanado = totalGanado + apuesta * 2;
     valorRondaPrevia = totalGanado;
-
-  }
-
-  else {
-
-    
+  } else {
     valorRondaPrevia = totalGanado;
   }
-}
+};
