@@ -9,6 +9,7 @@ let totalGanado = 100;
 let valorApostado = 0;
 let mensajeJuego = document.querySelector("#mensaje");
 let valorRondaPrevia = 100;
+let empezoElJuego = false;
 
 let cartas = document.querySelector("#cartas");
 let sumaJuego = document.querySelector("#sumaJuego");
@@ -29,7 +30,8 @@ let sumarPC = (array) => {
   }
 };
 const empezarJuego = () => {
-  if (sigueVivo === true && !gano) {
+  empezoElJuego = true;
+  if (sigueVivo === true && !gano && valorApostado > 0) {
     suma = 0;
     sumar(arrayCartas);
     sumaJuego.textContent = `Suma: ${suma}`;
@@ -40,9 +42,11 @@ const empezarJuego = () => {
     } else if (suma === 21) {
       mensaje = "¡Tenés Blackjack!";
       gano = true;
+      calcularResultado(valorApostado);
     } else {
       mensaje = "¡Perdiste!";
       sigueVivo = false;
+      calcularResultado(valorApostado);
     }
     mensajeJuego.textContent = mensaje;
   } else {
@@ -50,21 +54,25 @@ const empezarJuego = () => {
     arrayCartas = [];
     arrayCartasPC = [];
     sumaPC = 0;
-    mensaje = "¿Querés jugar?";
+    mensaje = "¡Hacé una apuesta!";
     suma = 0;
     mensajeJuego.textContent = mensaje;
-    sumaJuego.textContent = `Suma: ${suma}`;
+    sumaJuego.textContent = `Suma:`;
     cartas.textContent = `Cartas: ${arrayCartas.join("-")}`;
-    sumaJuegoCompu.textContent = `Suma PC: ${sumaPC}`;
-    cartasCompu.textContent = `Cartas PC: ${arrayCartasPC.join("-")}`;
+    sumaJuegoCompu.textContent = `Suma:`;
+    cartasCompu.textContent = `Cartas: ${arrayCartasPC.join("-")}`;
     posibilidadSacarCarta = true;
     gano = false;
+    empezoElJuego = false;
+    valorApostado = 0;
+    valorApuestaJuego.textContent = valorApostado;
+    totalDelJuego.textContent = `$${totalGanado}`;
   }
 };
 
 let posibilidadSacarCarta = true;
 const sacarCarta = () => {
-  if (sigueVivo && posibilidadSacarCarta && !gano) {
+  if (sigueVivo && posibilidadSacarCarta && !gano && empezoElJuego) {
     arrayCartas.push(generadorNumero(1, 12));
     empezarJuego();
   }
@@ -85,20 +93,24 @@ let cartasPC = () => {
       sumaPC = 0;
       arrayCartasPC.push(generadorNumero(1, 12));
       sumarPC(arrayCartasPC);
-      sumaJuegoCompu.textContent = `Suma PC: ${sumaPC}`;
-      cartasCompu.textContent = `Cartas PC: ${arrayCartasPC.join("-")} `;
+      sumaJuegoCompu.textContent = `Suma: ${sumaPC}`;
+      cartasCompu.textContent = `Cartas: ${arrayCartasPC.join("-")} `;
     }
 
     if (sumaPC > 21) {
       mensaje = "¡Ganaste!";
       sigueVivo = false;
       mensajeJuego.textContent = mensaje;
-      return (gano = true);
+      gano = true;
+      calcularResultado(valorApostado);
+      
+      
     }
 
-    if (sumaPC >= suma) {
+    if (sumaPC >= suma && sumaPC < 22) {
       mensaje = "¡Perdiste!";
       sigueVivo = false;
+      calcularResultado(valorApostado);
       return (mensajeJuego.textContent = mensaje);
     }
    
@@ -115,7 +127,7 @@ for (let index = 0; index < 5; index++) {
 
 let apostar = (apuesta) => {
 
-   if (totalGanado > 0) {
+   if (totalGanado > 0 && !empezoElJuego) {
     totalGanado -= apuesta;
 
     valorApostado += apuesta;
@@ -126,11 +138,29 @@ let apostar = (apuesta) => {
 }
 
 let resetear = () => {
-
+  if (!empezoElJuego) {
     valorApostado = 0;
     valorApuestaJuego.textContent = valorApostado;
     totalGanado = valorRondaPrevia;
     totalDelJuego.textContent = `$${totalGanado}`;
 
+  }
 
+
+}
+
+let calcularResultado = (apuesta) => {
+
+  if (gano) {
+
+    totalGanado = totalGanado + (apuesta*2);
+    valorRondaPrevia = totalGanado;
+
+  }
+
+  else {
+
+    
+    valorRondaPrevia = totalGanado;
+  }
 }

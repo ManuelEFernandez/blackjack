@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blackjack</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b7df5782e3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,22 +20,30 @@
 
         <div class="resultados-cartas">
             <div class="mensaje" id="mensaje">
-                <h3>¿Querés jugar?</h3>
+                <h3>¡Hacé una apuesta!</h3>
             </div>
             <div class="juegoHumano">
+                <i class="fa-solid fa-user"></i>
+                <div class="status-humano">
                 <div class="cartas" id="cartas">
                     <h4>Cartas:</h4>
                 </div>
                 <div class="suma" id="sumaJuego">
                     <h4>Suma:</h4>
                 </div>
+                </div>
             </div>
             <div class="juegoPc">
+                <i class="fa-solid fa-computer"></i>
+
+                <div class="status-pc">
                 <div class="cartas pc" id="cartasCompu">
-                    <h4>Cartas PC:</h4>
+                    <h4>Cartas:</h4>
+                    
                 </div>
                 <div class="suma pc" id="sumaJuegoCompu">
-                    <h4>Suma PC:</h4>
+                    <h4>Suma: </h4>
+                </div>
                 </div>
             </div>
 
