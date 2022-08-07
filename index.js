@@ -89,7 +89,7 @@ let sumaJuegoCompu = document.querySelector("#sumaJuegoCompu");
 
 let cartasPC = () => {
   if (sigueVivo && suma !== 0 && !gano) {
-    if (sumaPC < suma) {
+    if (sumaPC <= suma) {
       sumaPC = 0;
       arrayCartasPC.push(generadorNumero(1, 12));
       sumarPC(arrayCartasPC);
@@ -105,7 +105,7 @@ let cartasPC = () => {
       calcularResultado(valorApostado);
     }
 
-    if (sumaPC >= suma && sumaPC < 22) {
+    if (sumaPC > suma && sumaPC < 22) {
       mensaje = "¡Perdiste!";
       sigueVivo = false;
       calcularResultado(valorApostado);

@@ -256,7 +256,9 @@ h3 {
 
     width: 260px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 830px) {
+  
+  
     .resultados-cartas i {
 
         height: 35px;
