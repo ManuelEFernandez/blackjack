@@ -11,9 +11,11 @@
 
 body {
 
-    height: 100vh;
-    width: 100vw;
-
+    min-height: 100vh; 
+    height: auto; 
+    max-width: 100vw;
+    padding: 5px;
+    padding: 5px 0px;
     background: linear-gradient(to bottom, #061700, #172b11);
     display: flex;
     justify-content: center;
